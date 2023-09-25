@@ -5,5 +5,5 @@
  * @author ellit
  *
  */
-module DemoOnThread {
+module DemoThreadProject {
 }
