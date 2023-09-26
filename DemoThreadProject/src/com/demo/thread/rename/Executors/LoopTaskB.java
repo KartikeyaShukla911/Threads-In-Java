@@ -1,5 +1,6 @@
 package com.demo.thread.rename.Executors;
 
+import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.TimeUnit;
 
 public class LoopTaskB implements Runnable {
@@ -15,7 +16,8 @@ public class LoopTaskB implements Runnable {
 		for(int i=0;i<=10;i++) {
 			System.out.println("<<< Thread - "+id+" running times: "+i + " Thread-Name"+
 					Thread.currentThread().getName());
-			
+			Thread.setDefaultUncaughtExceptionHandler(null);
+			Thread.setDefaultUncaughtExceptionHandler((UncaughtExceptionHandler) new Exception());
 			try {
 				TimeUnit.MILLISECONDS.sleep(550);
 			} catch (InterruptedException e) {
